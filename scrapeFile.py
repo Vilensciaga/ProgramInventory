@@ -4,7 +4,7 @@ from Models.InstitutionData import InstitutionData
 url = "https://prod.flbog.net:4445/pls/apex/f?p=136:2:5265954718881:::::"
 
 
-def loadData():
+def getFile():
    with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)  # Use headless mode for Azure
     page = browser.new_page()
