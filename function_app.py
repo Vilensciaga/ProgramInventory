@@ -1,6 +1,5 @@
 import azure.functions as func
 import logging
-import scrape as sc
 import scrapeFile as scf
 
 
