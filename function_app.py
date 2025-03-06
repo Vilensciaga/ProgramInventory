@@ -11,7 +11,7 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 def ProgramInventory(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    scf.loadData()
+    scf.getFile()
     data = scf.readFile('downloads/search_results.csv')
 
 
