@@ -15,20 +15,14 @@ def ProgramInventory(req: func.HttpRequest) -> func.HttpResponse:
 
 
 
-    name = req.params.get('name')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
-
-    if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
+    
+    if not data:
+        return func.HttpResponse("No file detected.",
+            status_code=500
+    )
     else:
         return func.HttpResponse(
-            f"{data[0]}",
+            f"{data}",
              status_code=200
         )
 
