@@ -1,3 +1,5 @@
+import json
+
 class InstitutionData:
     def __init__(self, Institution, DegreeLevel, CIP, PSE, SpecializedAdmissions, CreditHours, Implemented, Suspended, Terminated):
         self.Institution = Institution
@@ -16,7 +18,5 @@ class InstitutionData:
                 f"CIP: {self.CIP}, PSE: {self.PSE}, SpecializedAdmissions: {self.SpecializedAdmissions}, "
                 f"CreditHours: {self.CreditHours}, Implemented: {self.Implemented}, "
                 f"Suspended: {self.Suspended}, Terminated: {self.Terminated}")
-
-
 
     

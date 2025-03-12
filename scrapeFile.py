@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 from Models.InstitutionData import InstitutionData 
 
-url = "https://prod.flbog.net:4445/pls/apex/f?p=136:2:5265954718881:::::"
+url = "https://prod.flbog.net:4445/pls/apex/f?p=136:2:15603079343155:::::"
 
 
 def getFile():

@@ -1,6 +1,7 @@
 import azure.functions as func
 import logging
 import scrapeFile as scf
+import json
 
 
 app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
@@ -12,9 +13,9 @@ def ProgramInventory(req: func.HttpRequest) -> func.HttpResponse:
 
     scf.getFile()
     data = scf.readFile('downloads/search_results.csv')
-
-
-
+    #print("\n".join(str(d) for d in data))
+    json_output = json.dumps(data, default=lambda x: x.__dict__, indent=4)
+    #print(json_output)
     
     if not data:
         return func.HttpResponse("No file detected.",
@@ -22,8 +23,7 @@ def ProgramInventory(req: func.HttpRequest) -> func.HttpResponse:
     )
     else:
         return func.HttpResponse(
-            f"{data}",
+            f"{json_output}",
              status_code=200
-        )
 
-        # "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+        )
